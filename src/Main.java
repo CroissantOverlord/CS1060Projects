@@ -4,17 +4,20 @@ public class Main {
     public static void main(String[] args) {
         // Press Alt+Enter with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome! Im the yeet master, the yeeter of the yeets!");
-        System.out.printf("Hello and welcome! Im the yeet master, the yeeter of the yeets!");
+        String message1 = "This is";
+        String message2 = " a message";
+        System.out.print(message1);
+        System.out.print(message2 + "\n");
+        System.out.print(" Hams" + "\n");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-            
+        String carDetails = "a 2001 " +
+                "Toyota Camry" + " with 200k Miles";
 
-        }
+        System.out.print("Your car details are ");
+        System.out.print(carDetails);
+
+
+
     }
 }
