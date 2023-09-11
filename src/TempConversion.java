@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class TempConversion {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);//p
+        Scanner sc = new Scanner(System.in);//This declares the scanner as the variable sc
 
         System.out.println("Type Fahrenheit Number");
         double fnumber = sc.nextDouble();//Assigns the number you type into the variable fnumber
