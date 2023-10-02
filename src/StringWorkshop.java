@@ -25,6 +25,9 @@ public class StringWorkshop {
         else if (numberAnswer == 3) {
             outputLength(startingString);
         }
+        else if (numberAnswer == 4){
+
+        }
 
 
 
@@ -33,9 +36,9 @@ public class StringWorkshop {
     public static String addingContent(Scanner sc, String startingString){
         System.out.print("");
         String addedCont = sc.next();
-        startingString += addedCont;
-        System.out.println(startingString);
-        return addedCont;
+        String newstartString = startingString + addedCont;
+        System.out.println(newstartString);
+        return newstartString;
     }
 
     //public static boolean checkingSub (String startingString){
@@ -49,6 +52,13 @@ public class StringWorkshop {
 
         return startingString;
     }
+
+    //public static String outputPrefix(String startingString, Scanner sc){
+        //System.out.println("Prefix: ");
+        //String prefix = sc.next();
+        //int index = startingString.indexOf('',prefix)
+
+    //}
 
 
 
