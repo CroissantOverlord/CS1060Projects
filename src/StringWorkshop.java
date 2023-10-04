@@ -4,30 +4,49 @@ public class StringWorkshop {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a starting string");
         String startingString = sc.next();
-        System.out.println(
-                "Would you like to:\n" +
-                "1. Add content\n" +
-                "2. Check if string contains substring\n" +
-                "3. Output length\n" +
-                "4. Output substring after prefix\n" +
-                "5. Output substring before suffix\n" +
-                "6. Output substring between prefix and suffix\n" +
-                "7. Exit");
 
-        int numberAnswer = sc.nextInt();
+        while(true){
+            System.out.println(
+                    "Would you like to:\n" +
+                            "1. Add content\n" +
+                            "2. Check if string contains substring\n" +
+                            "3. Output length\n" +
+                            "4. Output substring after prefix\n" +
+                            "5. Output substring before suffix\n" +
+                            "6. Output substring between prefix and suffix\n" +
+                            "7. Exit");
 
-        if (numberAnswer == 1) {
-            addingContent(sc, startingString);
-        }
-        else if (numberAnswer == 2) {
+            int numberAnswer = sc.nextInt();
+
+            if (numberAnswer == 1) {
+                addingContent(sc, startingString);
+                startingString += addedCont;
+                System.out.println(startingString);
+            }
+            else if (numberAnswer == 2) {
+
+            }
+            else if (numberAnswer == 3) {
+                outputLength(startingString);
+            }
+            else if (numberAnswer == 4){
+                outputPrefix(startingString,sc);
+
+            }
+            else if (numberAnswer == 5){
+
+            }
+            else if (numberAnswer == 6){
+
+            }
+            else if (numberAnswer == 7){
+                break;
+
+            }
+
 
         }
-        else if (numberAnswer == 3) {
-            outputLength(startingString);
-        }
-        else if (numberAnswer == 4){
 
-        }
 
 
 
@@ -36,9 +55,7 @@ public class StringWorkshop {
     public static String addingContent(Scanner sc, String startingString){
         System.out.print("");
         String addedCont = sc.next();
-        String newstartString = startingString + addedCont;
-        System.out.println(newstartString);
-        return newstartString;
+        return addedCont;
     }
 
     //public static boolean checkingSub (String startingString){
@@ -53,12 +70,16 @@ public class StringWorkshop {
         return startingString;
     }
 
-    //public static String outputPrefix(String startingString, Scanner sc){
-        //System.out.println("Prefix: ");
-        //String prefix = sc.next();
-        //int index = startingString.indexOf('',prefix)
+    public static String outputPrefix(String startingString, Scanner sc){
+        System.out.println("Prefix: ");
+        String prefix = sc.next();
+        int size = startingString.length();
+        int index = startingString.indexOf(prefix);
+        System.out.println(index);
 
-    //}
+        return startingString;
+
+    }
 
 
 
