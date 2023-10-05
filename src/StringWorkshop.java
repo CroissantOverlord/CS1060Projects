@@ -35,7 +35,7 @@ public class StringWorkshop {
         String addedCont = sc.next();
         startingString += addedCont;
         System.out.println(startingString);
-        return addedCont;
+        return startingString;
     }
 
     //public static boolean checkingSub (String startingString){
@@ -48,6 +48,10 @@ public class StringWorkshop {
         System.out.println("Your word is " + stringLength + " characters long");
 
         return startingString;
+    }
+
+    public static String prefixSub (String startingString){
+        
     }
 
 
