@@ -1,12 +1,14 @@
 import java.util.Scanner;
 public class StringWorkshop {
-    public static void main (String[] args){
+    public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a starting string");
+        System.out.println("Hello, enter a starting string");
         String startingString = sc.next();
 
-        while(true){
+        while (true) {
             System.out.println(
+                    "\n" +
                     "Would you like to:\n" +
                             "1. Add content\n" +
                             "2. Check if string contains substring\n" +
@@ -16,30 +18,29 @@ public class StringWorkshop {
                             "6. Output substring between prefix and suffix\n" +
                             "7. Exit");
 
+
             int numberAnswer = sc.nextInt();
 
             if (numberAnswer == 1) {
-                addingContent(sc, startingString);
-                startingString += addedCont;
+                startingString += addingContent(sc,startingString);
                 System.out.println(startingString);
-            }
-            else if (numberAnswer == 2) {
+            } else if (numberAnswer == 2) {
+                checkForSub(startingString, sc);
 
-            }
-            else if (numberAnswer == 3) {
+            } else if (numberAnswer == 3) {
                 outputLength(startingString);
-            }
-            else if (numberAnswer == 4){
-                outputPrefix(startingString,sc);
 
-            }
-            else if (numberAnswer == 5){
+            } else if (numberAnswer == 4) {
+                outputPrefix(startingString, sc);
 
-            }
-            else if (numberAnswer == 6){
+            } else if (numberAnswer == 5) {
+                outputSuffix(startingString, sc);
 
-            }
-            else if (numberAnswer == 7){
+            } else if (numberAnswer == 6) {
+                outputBetweenSufPre(startingString, sc);
+
+            } else if (numberAnswer == 7) {
+                System.out.println("Bye!");
                 break;
 
             }
@@ -48,48 +49,78 @@ public class StringWorkshop {
         }
 
 
-
-
     }
 
-    public static String addingContent(Scanner sc, String startingString){
-        System.out.print("");
-        String addedCont = sc.next();
-<<<<<<< HEAD
-        startingString += addedCont;
-        System.out.println(startingString);
-        return startingString;
-=======
+    public static String addingContent(Scanner sc, String startingString) {//1
+        sc.nextLine();
+        String addedCont = sc.nextLine();
         return addedCont;
->>>>>>> 4018415edf4aa556e41371f2c7c25314564b9a20
     }
 
-    //public static boolean checkingSub (String startingString){
+    public static void checkForSub (String startingString, Scanner sc ) {//2
+        sc.nextLine();
+        System.out.println("Enter substring for checking");
+        String substring = sc.nextLine();
+        if (startingString.contains(substring)){
+            System.out.println("Your string " + startingString + " does contain the substring " + substring);
 
+        }
+        else{
+            System.out.println("Your string " + startingString + " does not contain the substring " + substring);
+        }
 
-    //}
+    }
 
-    public static String outputLength(String startingString){
+    public static void outputLength(String startingString) {//3
         int stringLength = startingString.length();
-        System.out.println("Your word is " + stringLength + " characters long");
-
-        return startingString;
+        System.out.println("Your word " + startingString +  " is " + stringLength + " characters long");
     }
 
-<<<<<<< HEAD
-    public static String prefixSub (String startingString){
-        
-=======
-    public static String outputPrefix(String startingString, Scanner sc){
+    public static void outputPrefix(String startingString, Scanner sc){//4
         System.out.println("Prefix: ");
         String prefix = sc.next();
-        int size = startingString.length();
         int index = startingString.indexOf(prefix);
-        System.out.println(index);
+        if (index != -1) {
+            String substringAfterPrefix = startingString.substring(index + prefix.length());
+            System.out.println("Substring:" + substringAfterPrefix);
+        }
+        else {
+            System.out.println("Prefix not found");
+        }
 
-        return startingString;
 
->>>>>>> 4018415edf4aa556e41371f2c7c25314564b9a20
+    }
+
+    public static void outputSuffix(String startingString, Scanner sc) {//5
+        System.out.println("Suffix: ");
+        String suffix = sc.next();
+        int index = startingString.indexOf(suffix);
+        if (index != -1) {
+            String substringAfterSuffix = startingString.substring(0, index);
+            System.out.println("Substring:" + substringAfterSuffix);
+        }
+        else {
+            System.out.println("Suffix not found");
+        }
+
+    }
+
+    public static void outputBetweenSufPre(String startingString, Scanner sc) {//6
+        System.out.println("Prefix: ");
+        String prefix = sc.next();
+        System.out.println("Suffix: ");
+        String suffix = sc.next();
+        int indexPre = startingString.indexOf(prefix);
+        int indexSuf = startingString.indexOf(suffix);
+        if (indexPre != -1) {
+            String substringAfterPreSuf = startingString.substring(indexPre + prefix.length() + 0, indexSuf);
+            System.out.println("Substring:" + substringAfterPreSuf);
+        }
+        else {
+            System.out.println("Prefix or Suffix not found");
+        }
+
+
     }
 
 
