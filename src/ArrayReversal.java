@@ -35,9 +35,9 @@ public class ArrayReversal {
         System.arraycopy(reversedArray, 0, array, 0, size);
     }
     public static void printArray(int[] array, int size) {
-        System.out.print("Array contents: ");
+        System.out.print("Your values in reverse order: ");
         for (int i = 0; i < size; i++) {
-            System.out.print(array[i] + " ");
+            System.out.print(array[i] + ", ");
         }
     }
 }
