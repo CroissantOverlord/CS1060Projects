@@ -1,7 +1,9 @@
-public class Cat {
+public class Cat implements AdoptableAnimal{
 
-    @Override
-    public Cat(AdoptableAnimal){
+    private String name;
+    private String description;
+    private Double price;
+    
 
-    }
+
 }
